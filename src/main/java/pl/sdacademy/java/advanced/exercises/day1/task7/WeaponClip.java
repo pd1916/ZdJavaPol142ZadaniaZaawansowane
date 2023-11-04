@@ -35,7 +35,7 @@ public class WeaponClip {
     }
 
     public void shot() {
-        if(isLoaded() && warunek2() && warunek3() ) {
+        if(isLoaded()) {
             String bullet = weaponClip.pop();
             System.out.println(bullet);
         } else {
