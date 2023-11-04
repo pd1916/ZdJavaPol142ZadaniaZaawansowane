@@ -1,6 +1,6 @@
 package pl.sdacademy.java.advanced.exercises.day1.task9;
 
-public class Circle  implements Movable, Resizable {
+public class Circle implements Movable, Resizable {
     private final Point2D center;
     private final Point2D point;
 

@@ -1,7 +1,9 @@
 package pl.sdacademy.java.advanced.exercises.day1.task1;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class Task1 {
     public static void main(String[] args) {

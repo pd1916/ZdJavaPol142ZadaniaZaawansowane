@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Storage {
     //private Map<String, List<String>> storage = new HashMap<>();
-    private Map<String, List<String>> storage;
+    private final Map<String, List<String>> storage;
 
     public Storage() {
         storage = new HashMap<>();
