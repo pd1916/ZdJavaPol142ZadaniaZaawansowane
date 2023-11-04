@@ -6,10 +6,24 @@ import java.util.stream.Collectors;
 public class Task1 {
     public static void main(String[] args) {
         List<String> unsorted = List.of("A", "B", "Z", "D", "C");
-        //List<String> sorted = sortUsingAnonymousClass(unsorted);
-        //List<String> sorted = sortUsingOwnComparator(unsorted);
-        List<String> sorted = sortUsingLambda(unsorted);
-        System.out.println(sorted);
+
+        List<String> sorted = sortUsingAnonymousClass(unsorted);
+        System.out.println("sortUsingAnonymousClass: " + sorted);
+
+        sorted = sortUsingOwnComparator(unsorted);
+        System.out.println("sortUsingOwnComparator: " + sorted);
+
+        sorted = sortUsingLambda(unsorted);
+        System.out.println("sortUsingLambda: " + sorted);
+
+        sorted = sortUsingReverseOrder(unsorted);
+        System.out.println("sortUsingReverseOrder: " + sorted);
+
+        sorted = sortOnList(unsorted);
+        System.out.println("sortOnList: " + sorted);
+
+        sorted = sortUsingStream(unsorted);
+        System.out.println("sortUsingStream: " + sorted);
     }
 
     public static List<String> sortUsingAnonymousClass(List<String> unsorted) {
