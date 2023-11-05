@@ -39,6 +39,9 @@ public class Main {
         List<Car> carsWithV12Engine = carService.getCarsWithV12Engine();
         System.out.println("carsWithV12Engine: " + carsWithV12Engine.size());
 
+        List<Car> carsProducedBefore1999 = carService.getCarsProducedBefore1999();
+        System.out.println("carsProducedBefore1999: " + carsProducedBefore1999.size());
+
         /*
         // prezentacja getAll cars z różnymi zwracanymi listami
         carService.add(xc90);

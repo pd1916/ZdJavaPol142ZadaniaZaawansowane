@@ -7,7 +7,7 @@ public class Car {
     private final String name;
     private final String model;
     private final double price;
-    private final int prodcutionYear;
+    private final int productionYear;
     private final List<Manufacturer> manufacturers;
     private final EngineType engineType;
 
@@ -15,7 +15,7 @@ public class Car {
         this.name = name;
         this.model = model;
         this.price = price;
-        this.prodcutionYear = prodcutionYear;
+        this.productionYear = prodcutionYear;
         this.manufacturers = manufacturers;
         this.engineType = engineType;
     }
@@ -32,8 +32,8 @@ public class Car {
         return price;
     }
 
-    public int getProdcutionYear() {
-        return prodcutionYear;
+    public int getProductionYear() {
+        return productionYear;
     }
 
     public List<Manufacturer> getManufacturers() {
@@ -49,12 +49,12 @@ public class Car {
         if(this == o) return true;
         if(o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Double.compare(price, car.price) == 0 && prodcutionYear == car.prodcutionYear && Objects.equals(name, car.name) && Objects.equals(model, car.model) && Objects.equals(manufacturers, car.manufacturers) && engineType == car.engineType;
+        return Double.compare(price, car.price) == 0 && productionYear == car.productionYear && Objects.equals(name, car.name) && Objects.equals(model, car.model) && Objects.equals(manufacturers, car.manufacturers) && engineType == car.engineType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, model, price, prodcutionYear, manufacturers, engineType);
+        return Objects.hash(name, model, price, productionYear, manufacturers, engineType);
     }
 
     @Override
@@ -63,7 +63,7 @@ public class Car {
                 "name='" + name + '\'' +
                 ", model='" + model + '\'' +
                 ", price=" + price +
-                ", prodcutionYear=" + prodcutionYear +
+                ", prodcutionYear=" + productionYear +
                 ", manufacturers=" + manufacturers +
                 ", engineType=" + engineType +
                 '}';
