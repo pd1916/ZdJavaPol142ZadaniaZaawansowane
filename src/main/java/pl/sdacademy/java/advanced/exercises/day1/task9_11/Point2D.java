@@ -1,4 +1,4 @@
-package pl.sdacademy.java.advanced.exercises.day1.task9;
+package pl.sdacademy.java.advanced.exercises.day1.task9_11;
 
 public class Point2D implements Movable {
     private double x;
