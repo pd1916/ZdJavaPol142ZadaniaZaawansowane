@@ -13,5 +13,11 @@ public class Main {
         Shape hexagon = new Hexagon(2);
         double hexagonPerimeter = hexagon.calculatePerimeter();
         System.out.println("hexagonPerimeter: " + hexagonPerimeter);
+
+        Shape3D cube = new Cube(2);
+        double cubePerimeter = cube.calculatePerimeter();
+        double cubeVolume = cube.calculateVolume();
+        System.out.println("cubePerimeter: " + cubePerimeter);
+        System.out.println("cubeVolume: " + cubeVolume);
     }
 }
