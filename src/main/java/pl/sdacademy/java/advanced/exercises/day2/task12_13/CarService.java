@@ -10,9 +10,14 @@ public class CarService {
         cars.add(car);
     }
 
+    public void remove(Car car) {
+        cars.remove(car);
+    }
+
     public List<Car> getAll() {
         //return cars; // będziemy cały czas operować na kolekcji cars
         //return List.copyOf(cars); // zrobiebie kopi cars, ale jako niemodyfikowalną listę
         return new ArrayList<>(cars); // nowa modyfikowalna lista samochodów
     }
+
 }

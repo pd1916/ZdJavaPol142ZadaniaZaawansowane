@@ -32,6 +32,10 @@ public class Main {
         List<Car> cars = carService.getAll();
         System.out.println("All cars: " + cars.size());
 
+        carService.remove(gls1);
+        List<Car> carsWithoutGls1 = carService.getAll();
+        System.out.println("carsWithoutGls1: " + carsWithoutGls1.size());
+
         /*
         // prezentacja getAll cars z różnymi zwracanymi listami
         carService.add(xc90);
