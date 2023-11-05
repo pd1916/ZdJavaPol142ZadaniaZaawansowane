@@ -19,5 +19,7 @@ public class Main {
         double cubeVolume = cube.calculateVolume();
         System.out.println("cubePerimeter: " + cubePerimeter);
         System.out.println("cubeVolume: " + cubeVolume);
+        int result = ((Cube) cube).fill(9);
+        System.out.println("result: " + result);
     }
 }
