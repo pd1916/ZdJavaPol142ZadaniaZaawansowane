@@ -1,6 +1,7 @@
 package pl.sdacademy.java.advanced.exercises.day2.task12_13;
 
 import java.util.List;
+import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
@@ -42,6 +43,10 @@ public class Main {
         List<Car> carsProducedBefore1999 = carService.getCarsProducedBefore1999();
         System.out.println("carsProducedBefore1999: " + carsProducedBefore1999.size());
 
+        Optional<Car> cheapestCar = carService.getCheapestCar();
+        if(cheapestCar.isPresent()) {
+            System.out.println("cheapestCar: " + cheapestCar);
+        }
         /*
         // prezentacja getAll cars z różnymi zwracanymi listami
         carService.add(xc90);
