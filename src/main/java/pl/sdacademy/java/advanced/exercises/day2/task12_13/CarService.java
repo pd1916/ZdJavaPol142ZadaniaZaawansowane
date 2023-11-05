@@ -1,9 +1,6 @@
 package pl.sdacademy.java.advanced.exercises.day2.task12_13;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CarService {
@@ -48,6 +45,35 @@ public class CarService {
                 //.get();
     }
 
+    public Car getMostExpensiveCar() {
+        return cars.stream()
+                //.max(Comparator.comparingDouble(car -> car.getPrice()))
+                .max(Comparator.comparingDouble(Car::getPrice))
+                .get();
+    }
+
+    public List<Car> getCarsWithMoreThan2Manufacturers() {
+        return cars.stream()
+                .filter(car -> car.getManufacturers().size() >= 2)
+                .toList();
+    }
+
+    public List<Car> getCarsSortedByName(boolean ascending) {
+        if(ascending) {
+            return cars.stream()
+                    .sorted(Comparator.comparing(Car::getName))
+                    .collect(Collectors.toList());
+        } else {
+            return cars.stream()
+                    .sorted(Comparator.comparing(Car::getName).reversed())
+                    .collect(Collectors.toList());
+        }
+    }
+
+    public boolean contains(Car car) {
+        return cars.contains(car);
+    }
+
     public List<Car> getCarsProducedBy(Manufacturer manufacturer) {
         return cars.stream()
                 .filter(car -> car.getManufacturers().contains(manufacturer))
@@ -59,6 +85,23 @@ public class CarService {
 //            }
 //        }
 //        return result;
+    }
+
+    public List<Car> getCarsFoundedIn(int foundedYear, Operation operation) {
+        return switch(operation) {
+            case GREATER_THAN -> cars.stream()
+                    .filter(car -> car.getManufacturers().stream()
+                            .anyMatch(m -> m.getFoundedYear() > foundedYear))
+                    .collect(Collectors.toList());
+            case LESS_THAN -> cars.stream()
+                    .filter(car -> car.getManufacturers().stream()
+                            .anyMatch(m -> m.getFoundedYear() < foundedYear))
+                    .collect(Collectors.toList());
+            case EQUAL -> cars.stream()
+                    .filter(car -> car.getManufacturers().stream()
+                            .anyMatch(m -> m.getFoundedYear() == foundedYear))
+                    .collect(Collectors.toList());
+        };
     }
 
 }
