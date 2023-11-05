@@ -1,6 +1,6 @@
 package pl.sdacademy.java.advanced.exercises.day2.task20_23;
 
-public class Rectangle extends Shape{
+public class Rectangle extends Shape {
     private final double a;
     private final double b;
 

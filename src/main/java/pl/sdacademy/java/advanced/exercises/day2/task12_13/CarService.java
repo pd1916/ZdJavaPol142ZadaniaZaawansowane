@@ -1,6 +1,9 @@
 package pl.sdacademy.java.advanced.exercises.day2.task12_13;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class CarService {
@@ -42,7 +45,7 @@ public class CarService {
     public Optional<Car> getCheapestCar() {
         return cars.stream()
                 .min(Comparator.comparingDouble(Car::getPrice));
-                //.get();
+        //.get();
     }
 
     public Car getMostExpensiveCar() {

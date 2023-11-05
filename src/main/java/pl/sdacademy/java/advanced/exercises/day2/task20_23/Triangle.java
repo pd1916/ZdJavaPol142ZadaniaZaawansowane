@@ -1,6 +1,6 @@
 package pl.sdacademy.java.advanced.exercises.day2.task20_23;
 
-public class Triangle extends Shape{
+public class Triangle extends Shape {
     private final double a;
     private final double b;
     private final double c;
