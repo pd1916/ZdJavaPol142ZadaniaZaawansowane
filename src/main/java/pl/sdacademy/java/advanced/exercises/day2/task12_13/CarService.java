@@ -21,6 +21,13 @@ public class CarService {
     }
 
     public List<Car> getCarsWithV12Engine() {
+//        List<Car> result = new ArrayList<>();
+//        for(Car car : cars) {
+//            if(car.getEngineType().equals(EngineType.V12)) {
+//                result.add(car);
+//            }
+//        }
+//        return result;
         return cars.stream()
                 .filter(car -> car.getEngineType().equals(EngineType.V12))
                 .toList();
