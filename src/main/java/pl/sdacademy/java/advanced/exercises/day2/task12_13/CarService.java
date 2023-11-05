@@ -20,4 +20,10 @@ public class CarService {
         return new ArrayList<>(cars); // nowa modyfikowalna lista samochodów
     }
 
+    public List<Car> getCarsWithV12Engine() {
+        return cars.stream()
+                .filter(car -> car.getEngineType().equals(EngineType.V12))
+                .toList();
+    }
+
 }
