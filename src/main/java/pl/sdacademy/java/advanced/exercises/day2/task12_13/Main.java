@@ -47,6 +47,9 @@ public class Main {
         if(cheapestCar.isPresent()) {
             System.out.println("cheapestCar: " + cheapestCar);
         }
+
+        List<Car> carsProducedBy = carService.getCarsProducedBy(benz);
+        System.out.println("carsProducedBy: " + carsProducedBy.size());
         /*
         // prezentacja getAll cars z różnymi zwracanymi listami
         carService.add(xc90);

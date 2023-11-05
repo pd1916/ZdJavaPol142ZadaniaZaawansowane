@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class CarService {
     private List<Car> cars = new ArrayList<>();
@@ -45,6 +46,19 @@ public class CarService {
         return cars.stream()
                 .min(Comparator.comparingDouble(Car::getPrice));
                 //.get();
+    }
+
+    public List<Car> getCarsProducedBy(Manufacturer manufacturer) {
+        return cars.stream()
+                .filter(car -> car.getManufacturers().contains(manufacturer))
+                .toList();
+//        List<Car> result =  new ArrayList<>();
+//        for (Car car : cars) {
+//            if(car.getManufacturers().contains(manufacturer)) {
+//                result.add(car);
+//            }
+//        }
+//        return result;
     }
 
 }
