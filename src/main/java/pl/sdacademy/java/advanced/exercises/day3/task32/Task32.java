@@ -1,8 +1,6 @@
 package pl.sdacademy.java.advanced.exercises.day3.task32;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
@@ -26,7 +24,7 @@ public class Task32 {
     }
 
     private static boolean save(File inputFile, List<Car> content) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(inputFile))){
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(inputFile))) {
             oos.writeObject(content);
             return true;
         } catch(IOException e) {
@@ -36,7 +34,7 @@ public class Task32 {
     }
 
     private static List<Car> load(File file) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))){
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
             return (List<Car>) ois.readObject();
         } catch(IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);

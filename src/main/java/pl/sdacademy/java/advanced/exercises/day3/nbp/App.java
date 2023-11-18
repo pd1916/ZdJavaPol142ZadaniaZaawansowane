@@ -17,7 +17,7 @@ public class App {
         // połączenie do api i wyciągnięcie danych
         URL nbp = new URL("http://api.nbp.pl/api/exchangerates/tables/a/?format=json");
         StringBuilder result = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(nbp.openConnection().getInputStream()))){
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(nbp.openConnection().getInputStream()))) {
             String inputLine;
             while((inputLine = br.readLine()) != null) {
                 result.append(inputLine);
